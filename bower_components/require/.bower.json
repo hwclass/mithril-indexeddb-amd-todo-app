@@ -1,0 +1,34 @@
+{
+  "name": "require.js",
+  "homepage": "https://github.com/nathanfaucett/require.js",
+  "authors": [
+    "lonewolfgames <nathanfaucett@gmail.com>"
+  ],
+  "description": "node.js require loader for the browser",
+  "main": "build/require.min.js",
+  "keywords": [
+    "require",
+    "require.js",
+    "loader",
+    "module",
+    "include"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "50a7c65601",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "50a7c65601b0a64a2441c32bad45993587de63b8"
+  },
+  "_source": "git://github.com/nathanfaucett/require.js.git",
+  "_target": "*",
+  "_originalSource": "require",
+  "_direct": true
+}
