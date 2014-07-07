@@ -1,37 +1,30 @@
 (function (m, app) {
 
-    debugger; 
-
     app.modules.todo = {};
-
-    /*initializing models, controllers and views for todo module*/
-    app.modules.todo.models = {};
-    app.modules.todo.views = {};
-    app.modules.todo.controllers = {};
 
     /*todoList array for todo list*/
     var todoList = Array;
 
     /*app module for todo application*/
-    app.modules.todo.models.Todo = function(data) {
+    app.modules.todo.model = function(data) {
         this.description = m.prop(data.description);
         this.done = m.prop(false);
     };
 
     /*main controller*/
-    app.modules.todo.controllers.Todo = function() {
+    app.modules.todo.controller = function() {
         this.list = new todoList();
         this.description = m.prop("");
         this.add = function() {
             if (this.description()) {
-                this.list.push(new app.modules.todo.models.Todo({description: this.description()}));
+                this.list.push(new app.modules.todo.model({description: this.description()}));
                 this.description("");
             }
         }.bind(this);
     };
 
     /*main view*/
-    app.modules.todo.views.Todo = function(ctrl) {
+    app.modules.todo.view = function(ctrl) {
         return m("html", [
             m("body", [
                 m("input", {onchange: m.withAttr("value", ctrl.description), value: ctrl.description()}),
@@ -50,6 +43,6 @@
         ]);
     };
 
-    m.module(document, [app.modules.todo.models, app.modules.todo.controllers, app.modules.todo.views]);
+    m.module(document, app.modules.todo);
 
 })(Mithril, app);
