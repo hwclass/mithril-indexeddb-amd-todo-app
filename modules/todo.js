@@ -5,13 +5,13 @@
     /*todoList array for todo list*/
     var todoList = Array;
 
-    /*app module for todo application*/
+    /*app module for todo model*/
     app.modules.todo.model = function(data) {
         this.description = m.prop(data.description);
         this.done = m.prop(false);
     };
 
-    /*main controller*/
+    /*todo controller*/
     app.modules.todo.controller = function() {
         this.list = new todoList();
         this.description = m.prop("");
@@ -23,7 +23,7 @@
         }.bind(this);
     };
 
-    /*main view*/
+    /*todo view*/
     app.modules.todo.view = function(ctrl) {
         return m("html", [
             m("body", [
